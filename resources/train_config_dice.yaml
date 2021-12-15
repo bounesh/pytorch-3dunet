@@ -83,7 +83,7 @@ loaders:
     # inside this this directory will be included as well (non-recursively)
     file_paths:
 #      - "../../Data/H5_files/Train"
-      - "D:\Dokumenti\Faks\Magisterij\Magistrska\Data\H5_files\Train"
+      - "/home/eb1690/Documents/Data/H5_files/Train"
 
     # SliceBuilder configuration, i.e. how to iterate over the input volume patch-by-patch
     slice_builder:
@@ -141,7 +141,7 @@ loaders:
     # inside this this directory will be included as well (non-recursively)
     file_paths:
 #      - "../../Data/H5_files/Val"
-      - "D:\Dokumenti\Faks\Magisterij\Magistrska\Data\H5_files\Val"
+      - "/home/eb1690/Documents/Data/H5_files/Val"
 
     # SliceBuilder configuration
     slice_builder:
