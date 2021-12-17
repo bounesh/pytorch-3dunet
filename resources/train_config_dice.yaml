@@ -90,7 +90,7 @@ loaders:
       # SliceBuilder class
       name: SliceBuilder
       # train patch size given to the network (adapt to fit in your GPU mem, generally the bigger patch the better)
-      patch_shape: [16, 120, 120]
+      patch_shape: [32, 128, 128]
       # train stride between patches
       stride_shape: [8, 32, 32]
 
@@ -106,7 +106,7 @@ loaders:
         # rotate an image by a random degrees from taken from (-angle_spectrum, angle_spectrum) interval
         - name: RandomRotate
           # rotate only in ZY only since most volumetric data is anisotropic
-          axes: [[2, 1, 0]]
+          axes: [[2, 1]]
           angle_spectrum: 10
           mode: reflect
         # apply elasitc deformations of 3D patches on a per-voxel mesh
@@ -127,7 +127,7 @@ loaders:
 #        - name: RandomRotate90
         - name: RandomRotate
           # rotate only in ZY only since most volumetric data is anisotropic
-          axes: [[2, 1, 0]]
+          axes: [[2, 1]]
           angle_spectrum: 10
           mode: reflect
         - name: ElasticDeformation
@@ -148,9 +148,9 @@ loaders:
       # SliceBuilder class
       name: SliceBuilder
       # validation patch (can be bigger than train patch since there is no backprop)
-      patch_shape: [16, 120, 120]
+      patch_shape: [ 32, 128, 128 ]
       # validation stride (validation patches doesn't need to overlap)
-      stride_shape: [8, 32, 32]
+      stride_shape: [ 8, 32, 32 ]
     transformer:
       raw:
         - name: Standardize
